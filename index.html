@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .bulb-container{
+           margin: 25px; 
+           padding:10px
+        }
+    </style>
+</head>
+<body>
+    <button onclick="turnOn()">Turn On</button>
+    <button onclick="turnOff()">Turn Off</button>
+    <button id="switchy" onclick="twitch()">ON</button>
+    
+    <div class="bulb-container">
+        <img id="img" src="off.gif" alt="">
+    </div>
+    
+
+    <script>
+
+        const turnOn = ()=>{
+            let ob = document.getElementById('img');
+            ob.setAttribute('src','on.gif');
+        }
+
+        const turnOff = ()=>{
+            let ob = document.getElementById('img');
+            ob.setAttribute('src','off.gif');
+        }
+        
+        const twitch = ()=>{
+            let imgob = document.getElementById("img");
+            let obj = document.getElementById("switchy");
+            let val = imgob.getAttribute('src');
+
+            if(val=="on.gif"){
+                obj.innerHTML = "ON"
+                turnOff();
+            } else if(val=='off.gif'){
+                obj.innerHTML = "OFF"
+                turnOn();    
+            }
+            
+        }
+
+    </script>
+
+</body>
+</html>
